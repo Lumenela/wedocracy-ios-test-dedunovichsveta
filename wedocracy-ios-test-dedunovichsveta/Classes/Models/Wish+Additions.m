@@ -39,6 +39,20 @@ NSString * const WishAttributeNameWishId = @"wishId";
     wish.notes = [json stringForKey:WishKeyNotes];
     wish.itemUrl = [json stringForKey:WishKeyItemUrl];
     wish.photo = [json stringForKey:WishKeyPhoto];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSString *creationDateString = [json stringForKey:WishKeyCreated];
+
+    if (creationDateString) {
+        wish.created = [formatter dateFromString:creationDateString];
+    }
+    
+    NSString *modifiedDateString = [json stringForKey:WishKeyModified];
+    if (modifiedDateString) {
+        wish.modified = [formatter dateFromString:modifiedDateString];
+    }
+    
     return wish;
 }
 

@@ -6,14 +6,15 @@
 //  Copyright (c) 2014 Lumenela. All rights reserved.
 //
 
-#import "AllWishlistsViewController.h"
+#import "WishlistViewController.h"
 #import "Wish.h"
 #import "WedocracyService.h"
 #import "AppDelegate.h"
+#import "WishViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 
 
-@interface AllWishlistsViewController ()<NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface WishlistViewController ()<NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
@@ -21,7 +22,7 @@
 @end
 
 
-@implementation AllWishlistsViewController
+@implementation WishlistViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.fetchedResultsController = [Wish MR_fetchAllSortedBy:@"gift" ascending:YES withPredicate:nil groupBy:nil delegate:self];
+    self.fetchedResultsController = [Wish MR_fetchAllSortedBy:@"created" ascending:YES withPredicate:nil groupBy:nil delegate:self];
     [self refreshFromService];
 }
 
@@ -136,6 +137,15 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller 
 {
     [self.tableView endUpdates];
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    WishViewController *viewController = (WishViewController *)segue.destinationViewController;
+    NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+    Wish *wish = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    viewController.wish = wish;
 }
 
 

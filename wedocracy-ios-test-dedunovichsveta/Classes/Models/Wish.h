@@ -20,8 +20,8 @@
 @property (nonatomic, retain) NSString * photo;
 @property (nonatomic, retain) NSString * itemUrl;
 @property (nonatomic, retain) NSString * notes;
-@property (nonatomic, retain) NSString * created;
-@property (nonatomic, retain) NSString * modified;
+@property (nonatomic, retain) NSDate * created;
+@property (nonatomic, retain) NSDate * modified;
 @property (nonatomic, retain) NSString * pathToPhoto;
 
 @end

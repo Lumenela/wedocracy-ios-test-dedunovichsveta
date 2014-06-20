@@ -1,5 +1,5 @@
 //
-//  AllWishlistsViewController.h
+//  WishViewController.h
 //  wedocracy-ios-test-dedunovichsveta
 //
 //  Created by Sveta Dedunovich on 6/20/14.
@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Wish.h"
 
-@interface AllWishlistsViewController : UIViewController
+@interface WishViewController : UITableViewController
+
+@property (nonatomic, strong) Wish *wish;
 
 @end
