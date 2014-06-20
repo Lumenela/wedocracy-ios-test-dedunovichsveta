@@ -10,6 +10,12 @@
 		A1790BF91953F3EB007B8266 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1790BF81953F3EB007B8266 /* CoreData.framework */; };
 		A1790BFE1953F425007B8266 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1790BFD1953F425007B8266 /* AppDelegate.m */; };
 		A1790C011953F471007B8266 /* Main-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1790BFF1953F471007B8266 /* Main-iPad.storyboard */; };
+		A1790C071953F5A2007B8266 /* AllWishlistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1790C061953F5A2007B8266 /* AllWishlistsViewController.m */; };
+		A1790C0A1953F5B2007B8266 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1790C081953F5B2007B8266 /* Model.xcdatamodeld */; };
+		A1790C0E1953F6D4007B8266 /* WedocracyService.m in Sources */ = {isa = PBXBuildFile; fileRef = A1790C0D1953F6D4007B8266 /* WedocracyService.m */; };
+		A1790C111953F89F007B8266 /* Wish.m in Sources */ = {isa = PBXBuildFile; fileRef = A1790C101953F89F007B8266 /* Wish.m */; };
+		A1790C141953F8B4007B8266 /* Wish+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A1790C131953F8B4007B8266 /* Wish+Additions.m */; };
+		A1790C181954017A007B8266 /* NSDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A1790C171954017A007B8266 /* NSDictionary+Additions.m */; };
 		A1B967171953F2AA00FE3D36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B967161953F2AA00FE3D36 /* Foundation.framework */; };
 		A1B967191953F2AA00FE3D36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B967181953F2AA00FE3D36 /* CoreGraphics.framework */; };
 		A1B9671B1953F2AA00FE3D36 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B9671A1953F2AA00FE3D36 /* UIKit.framework */; };
@@ -42,6 +48,17 @@
 		A1790BFC1953F425007B8266 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A1790BFD1953F425007B8266 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A1790C001953F471007B8266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Main-iPad.storyboard"; sourceTree = "<group>"; };
+		A1790C051953F5A2007B8266 /* AllWishlistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllWishlistsViewController.h; sourceTree = "<group>"; };
+		A1790C061953F5A2007B8266 /* AllWishlistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllWishlistsViewController.m; sourceTree = "<group>"; };
+		A1790C091953F5B2007B8266 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A1790C0C1953F6D4007B8266 /* WedocracyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WedocracyService.h; sourceTree = "<group>"; };
+		A1790C0D1953F6D4007B8266 /* WedocracyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WedocracyService.m; sourceTree = "<group>"; };
+		A1790C0F1953F89F007B8266 /* Wish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wish.h; sourceTree = "<group>"; };
+		A1790C101953F89F007B8266 /* Wish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wish.m; sourceTree = "<group>"; };
+		A1790C121953F8B4007B8266 /* Wish+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Wish+Additions.h"; sourceTree = "<group>"; };
+		A1790C131953F8B4007B8266 /* Wish+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Wish+Additions.m"; sourceTree = "<group>"; };
+		A1790C161954017A007B8266 /* NSDictionary+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Additions.h"; sourceTree = "<group>"; };
+		A1790C171954017A007B8266 /* NSDictionary+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Additions.m"; sourceTree = "<group>"; };
 		A1B967131953F2AA00FE3D36 /* wedocracy-ios-test-dedunovichsveta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wedocracy-ios-test-dedunovichsveta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B967161953F2AA00FE3D36 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A1B967181953F2AA00FE3D36 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -88,10 +105,61 @@
 		A1790BFB1953F425007B8266 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A1790C1519540164007B8266 /* Utils */,
+				A1790C0B1953F6A2007B8266 /* Communication */,
+				A1790C021953F581007B8266 /* Controllers */,
+				A1790C031953F581007B8266 /* Models */,
+				A1790C041953F581007B8266 /* Views */,
 				A1790BFC1953F425007B8266 /* AppDelegate.h */,
 				A1790BFD1953F425007B8266 /* AppDelegate.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		A1790C021953F581007B8266 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A1790C051953F5A2007B8266 /* AllWishlistsViewController.h */,
+				A1790C061953F5A2007B8266 /* AllWishlistsViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A1790C031953F581007B8266 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1790C081953F5B2007B8266 /* Model.xcdatamodeld */,
+				A1790C121953F8B4007B8266 /* Wish+Additions.h */,
+				A1790C131953F8B4007B8266 /* Wish+Additions.m */,
+				A1790C0F1953F89F007B8266 /* Wish.h */,
+				A1790C101953F89F007B8266 /* Wish.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A1790C041953F581007B8266 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1790C0B1953F6A2007B8266 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				A1790C0C1953F6D4007B8266 /* WedocracyService.h */,
+				A1790C0D1953F6D4007B8266 /* WedocracyService.m */,
+			);
+			path = Communication;
+			sourceTree = "<group>";
+		};
+		A1790C1519540164007B8266 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A1790C161954017A007B8266 /* NSDictionary+Additions.h */,
+				A1790C171954017A007B8266 /* NSDictionary+Additions.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		A1B9670A1953F2AA00FE3D36 = {
@@ -301,8 +369,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1790C141953F8B4007B8266 /* Wish+Additions.m in Sources */,
 				A1B967231953F2AA00FE3D36 /* main.m in Sources */,
 				A1790BFE1953F425007B8266 /* AppDelegate.m in Sources */,
+				A1790C111953F89F007B8266 /* Wish.m in Sources */,
+				A1790C181954017A007B8266 /* NSDictionary+Additions.m in Sources */,
+				A1790C071953F5A2007B8266 /* AllWishlistsViewController.m in Sources */,
+				A1790C0E1953F6D4007B8266 /* WedocracyService.m in Sources */,
+				A1790C0A1953F5B2007B8266 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +607,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A1790C081953F5B2007B8266 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A1790C091953F5B2007B8266 /* Model.xcdatamodel */,
+			);
+			currentVersion = A1790C091953F5B2007B8266 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A1B9670B1953F2AA00FE3D36 /* Project object */;
 }
