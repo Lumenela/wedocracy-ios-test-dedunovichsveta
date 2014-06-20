@@ -29,7 +29,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="59R-fL-JmG" kind="push" id="dwh-Vf-Ngt"/>
+                                            <segue destination="59R-fL-JmG" kind="push" identifier="WishDetails" id="dwh-Vf-Ngt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -50,11 +50,12 @@
                     <navigationItem key="navigationItem" id="JmF-F4-1I9"/>
                     <connections>
                         <outlet property="tableView" destination="rSD-qB-u5a" id="gHR-MZ-6rZ"/>
+                        <segue destination="59R-fL-JmG" kind="push" identifier="NewWish" id="FGX-mE-7pc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ee-eO-mN3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027" y="306"/>
+            <point key="canvasLocation" x="1051" y="306"/>
         </scene>
         <!--Wish View Controller-->
         <scene sceneID="ACU-fb-a8d">
@@ -137,4 +138,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="dwh-Vf-Ngt"/>
+    </inferredMetricsTieBreakers>
 </document>

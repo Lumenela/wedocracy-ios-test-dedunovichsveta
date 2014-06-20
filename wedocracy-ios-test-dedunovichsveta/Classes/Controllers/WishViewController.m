@@ -34,6 +34,16 @@ typedef NS_ENUM(NSInteger, TableRowIndex) {
     [super viewDidLoad];
 }
 
+- (Wish *)wish
+{
+    if (_wish) {
+        return _wish;
+    }
+    _wish = [Wish MR_createEntity];
+    return _wish;
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -43,7 +53,7 @@ typedef NS_ENUM(NSInteger, TableRowIndex) {
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.wish ? ROW_COUNT : 0;
+    return ROW_COUNT;
 }
 
 

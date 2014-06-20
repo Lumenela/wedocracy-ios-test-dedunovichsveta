@@ -14,6 +14,7 @@ NSString * const BaseURLString = @"http://wedocracy-ios-test.herokuapp.com/clien
 NSString * const AllWishlistsURL = @"request_index";
 NSString * const EditWishUrl = @"request_edit/";
 NSString * const DeleteWishUrl = @"request_delete/";
+NSString * const AddWishUrl = @"request_add/";
 
 NSString * const WishesKey = @"wishes";
 
@@ -71,6 +72,17 @@ NSString * const WishesKey = @"wishes";
         handler(NO, error);
     }];
     deleteWish.responseSerializer = [WedocracyService defaultResponseSerializer];
+}
+
+
+- (void)newWishWithCompletionHandler:(WedCompletionHandler)handler
+{
+    AFHTTPRequestOperation *addWithOperation = [self POST:AddWishUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        handler(YES, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        handler(NO, error);
+    }];
+    addWithOperation.responseSerializer = [WedocracyService defaultResponseSerializer];
 }
 
 

@@ -13,6 +13,9 @@
 #import "WishViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 
+NSString * const NewWishSegue = @"NewWish";
+NSString * const WishDetailsSegue = @"WishDetails";
+
 
 @interface WishlistViewController ()<NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -142,10 +145,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    WishViewController *viewController = (WishViewController *)segue.destinationViewController;
-    NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-    Wish *wish = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    viewController.wish = wish;
+    if ([segue.identifier isEqualToString:WishDetailsSegue]) {
+        WishViewController *viewController = (WishViewController *)segue.destinationViewController;
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        Wish *wish = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        viewController.wish = wish;
+    }
 }
 
 
@@ -174,6 +179,19 @@
             }
         }];
     }
+}
+
+
+- (void)addWish
+{
+    [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
+    __weak typeof(self) weakSelf = self;
+    [[WedocracyService sharedInstance] newWishWithCompletionHandler:^(BOOL success, NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:ApplicationDelegate.window animated:YES];
+        if (success) {
+            [weakSelf performSegueWithIdentifier:NewWishSegue sender:weakSelf];
+        }
+    }];
 }
 
 @end

@@ -38,7 +38,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="bpi-le-Vs4" kind="push" id="mw3-aV-DmC"/>
+                                            <segue destination="bpi-le-Vs4" kind="push" identifier="WishDetails" id="mw3-aV-DmC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -59,6 +59,7 @@
                     <navigationItem key="navigationItem" id="Mr0-zf-I6B"/>
                     <connections>
                         <outlet property="tableView" destination="SJG-df-EZ9" id="zst-ct-gi4"/>
+                        <segue destination="bpi-le-Vs4" kind="push" identifier="NewWish" id="Zhb-Kg-7Lc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -146,4 +147,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="mw3-aV-DmC"/>
+    </inferredMetricsTieBreakers>
 </document>
