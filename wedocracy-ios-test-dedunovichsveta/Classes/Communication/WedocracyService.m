@@ -47,6 +47,12 @@ NSString * const WishesKey = @"wishes";
 }
 
 
+- (void)updateWish:(id)wish withCompletionHandler:(WedCompletionHandler)handler
+{
+    
+}
+
+
 + (AFJSONResponseSerializer *)defaultResponseSerializer
 {
     AFJSONResponseSerializer *serializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
