@@ -7,6 +7,7 @@
 //
 
 #import "AFHTTPRequestOperationManager.h"
+#import "Wish.h"
 
 typedef void (^WedCompletionHandlerWithData)(id data, NSError *error);
 typedef void (^WedCompletionHandler)(BOOL success,NSError *error);
@@ -17,6 +18,6 @@ typedef void (^WedCompletionHandler)(BOOL success,NSError *error);
 
 - (void)getWishlistsWithCompletionHandler:(WedCompletionHandler)handler;
 
-- (void)updateWish:(id)wish withCompletionHandler:(WedCompletionHandler)handler;
+- (void)updateWish:(Wish *)wish withCompletionHandler:(WedCompletionHandler)handler;
 
 @end

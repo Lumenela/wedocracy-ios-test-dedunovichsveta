@@ -47,9 +47,16 @@ NSString * const WishesKey = @"wishes";
 }
 
 
-- (void)updateWish:(id)wish withCompletionHandler:(WedCompletionHandler)handler
+- (void)updateWish:(Wish *)wish withCompletionHandler:(WedCompletionHandler)handler
 {
-    
+    NSString *url = [NSString stringWithFormat:@"request_edit/%@", wish.wishId];
+    NSDictionary *params = @{};
+    AFHTTPRequestOperation *updateWish = [self PUT:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        handler(YES, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        handler(NO, error);
+    }];
+    updateWish.responseSerializer = [WedocracyService defaultResponseSerializer];
 }
 
 
