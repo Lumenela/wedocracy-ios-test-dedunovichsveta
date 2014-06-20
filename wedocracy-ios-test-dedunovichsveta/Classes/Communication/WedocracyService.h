@@ -19,5 +19,6 @@ typedef void (^WedCompletionHandler)(BOOL success,NSError *error);
 - (void)getWishlistsWithCompletionHandler:(WedCompletionHandler)handler;
 
 - (void)updateWish:(Wish *)wish withCompletionHandler:(WedCompletionHandler)handler;
+- (void)deleteWish:(Wish *)wish withCompletionHandler:(WedCompletionHandler)handler;
 
 @end

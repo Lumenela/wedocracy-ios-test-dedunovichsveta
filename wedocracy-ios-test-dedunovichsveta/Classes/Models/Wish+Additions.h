@@ -12,4 +12,6 @@
 
 + (Wish *)newFromJson:(NSDictionary *)json;
 
+- (NSDictionary *)json;
+
 @end

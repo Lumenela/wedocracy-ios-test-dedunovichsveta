@@ -149,4 +149,31 @@
 }
 
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Wish *wish = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
+        [[WedocracyService sharedInstance] deleteWish:wish withCompletionHandler:^(BOOL success, NSError *error) {
+            [MBProgressHUD hideAllHUDsForView:ApplicationDelegate.window animated:YES];
+            if (success) {
+                [wish MR_deleteEntity];
+                [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+            }
+        }];
+    }
+}
+
 @end

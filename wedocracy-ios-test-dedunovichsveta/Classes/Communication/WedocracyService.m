@@ -12,6 +12,8 @@
 
 NSString * const BaseURLString = @"http://wedocracy-ios-test.herokuapp.com/client/";
 NSString * const AllWishlistsURL = @"request_index";
+NSString * const EditWishUrl = @"request_edit/";
+NSString * const DeleteWishUrl = @"request_delete/";
 
 NSString * const WishesKey = @"wishes";
 
@@ -49,14 +51,26 @@ NSString * const WishesKey = @"wishes";
 
 - (void)updateWish:(Wish *)wish withCompletionHandler:(WedCompletionHandler)handler
 {
-    NSString *url = [NSString stringWithFormat:@"request_edit/%@", wish.wishId];
-    NSDictionary *params = @{};
+    NSString *url = [NSString stringWithFormat:@"%@%@", EditWishUrl, wish.wishId];
+    NSDictionary *params = [wish json];
     AFHTTPRequestOperation *updateWish = [self PUT:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         handler(YES, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         handler(NO, error);
     }];
     updateWish.responseSerializer = [WedocracyService defaultResponseSerializer];
+}
+
+
+- (void)deleteWish:(Wish *)wish withCompletionHandler:(WedCompletionHandler)handler
+{
+    NSString *url = [NSString stringWithFormat:@"%@%@", DeleteWishUrl, wish.wishId];
+    AFHTTPRequestOperation *deleteWish = [self DELETE:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        handler(YES, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        handler(NO, error);
+    }];
+    deleteWish.responseSerializer = [WedocracyService defaultResponseSerializer];
 }
 
 

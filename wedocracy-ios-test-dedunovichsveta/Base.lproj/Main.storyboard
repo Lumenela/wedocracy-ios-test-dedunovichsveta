@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SJG-df-EZ9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SJG-df-EZ9">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,6 +49,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901959999995" green="0.76078431369999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="SJG-df-EZ9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="WHZ-3z-QXO"/>
+                            <constraint firstAttribute="bottom" secondItem="SJG-df-EZ9" secondAttribute="bottom" id="ZR6-yG-WSt"/>
+                            <constraint firstAttribute="trailing" secondItem="SJG-df-EZ9" secondAttribute="trailing" id="sE3-EX-Fui"/>
+                            <constraint firstItem="SJG-df-EZ9" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="xQV-k0-b5h"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mr0-zf-I6B"/>
                     <connections>
@@ -104,7 +110,13 @@
                             <outlet property="delegate" destination="bpi-le-Vs4" id="jrL-Bp-zNe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vG5-Bl-fXj"/>
+                    <navigationItem key="navigationItem" id="vG5-Bl-fXj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dEh-6L-Ukz">
+                            <connections>
+                                <action selector="save:" destination="bpi-le-Vs4" id="O6p-33-QHI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29E-tH-0IC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,9 @@
 
 #import "WishViewController.h"
 #import "WishInfoCell.h"
+#import "WedocracyService.h"
+#import "AppDelegate.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 
 typedef NS_ENUM(NSInteger, TableRowIndex) {
@@ -29,12 +32,6 @@ typedef NS_ENUM(NSInteger, TableRowIndex) {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 #pragma mark - Table view data source
@@ -89,6 +86,8 @@ typedef NS_ENUM(NSInteger, TableRowIndex) {
 {
     cell.titleLabel.text = @"Gift";
     cell.textField.text = self.wish.gift;
+    cell.type = InfoTypeGift;
+    cell.wish = self.wish;
 }
 
 
@@ -96,6 +95,8 @@ typedef NS_ENUM(NSInteger, TableRowIndex) {
 {
     cell.titleLabel.text = @"Price";
     cell.textField.text = [NSString stringWithFormat:@"%@",self.wish.amount];
+    cell.type = InfoTypePrice;
+    cell.wish = self.wish;
 }
 
 
@@ -103,12 +104,32 @@ typedef NS_ENUM(NSInteger, TableRowIndex) {
 {
     cell.titleLabel.text = @"Store";
     cell.textField.text = self.wish.store;
+    cell.type = InfoTypeStore;
+    cell.wish = self.wish;
 }
 
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 78;
+}
+
+
+- (IBAction)save:(id)sender
+{
+    [self.view endEditing:YES];
+    [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
+    [[WedocracyService sharedInstance] updateWish:self.wish withCompletionHandler:^(BOOL success, NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:ApplicationDelegate.window animated:YES];
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        if (success) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            NSString *errorText = [NSString stringWithFormat:@"Error has occured. %@", error.localizedDescription];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:errorText delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
 }
 
 @end

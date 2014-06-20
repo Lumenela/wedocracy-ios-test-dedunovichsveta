@@ -71,21 +71,26 @@ NSString * const WishAttributeNameWishId = @"wishId";
     return wish;
 }
 
+
+- (NSDictionary *)json
+{
+    NSMutableDictionary *json = [NSMutableDictionary new];
+    [json setObject:self.wishId forKey:WishKeyId];
+    
+    if (self.gift) {
+        [json setObject:self.gift forKey:WishKeyGift];
+    }
+    if (self.amount) {
+        [json setObject:self.amount forKey:WishKeyAmount];
+    }
+    if (self.store) {
+        [json setObject:self.store forKey:WishKeyStore];
+    }
+    NSDictionary *wrappedJson = @{WishWrapper : json};
+    return wrappedJson;
+}
+
 @end
 
 /*
- {
- "Wish":{
- "id":"21",
- "gift":"",
- "is_cash":false,
- "amount":null,
- "store":null,
- "photo":null,
- "item_url":null,
- "notes":null,
- "created":"2014-06-19 08:39:40",
- "modified":"2014-06-19 08:39:40"
- }
- }
 */

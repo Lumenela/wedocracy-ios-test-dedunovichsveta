@@ -101,7 +101,13 @@
                             <outlet property="delegate" destination="59R-fL-JmG" id="aN5-ac-gwk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="El8-cR-eXl"/>
+                    <navigationItem key="navigationItem" id="El8-cR-eXl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rpQ-DC-GRo">
+                            <connections>
+                                <action selector="save:" destination="59R-fL-JmG" id="zIT-ct-5p2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJA-po-FVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

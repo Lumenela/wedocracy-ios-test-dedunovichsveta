@@ -26,14 +26,34 @@
 
 - (void)awakeFromNib
 {
-    // Initialization code
+    [self.textField addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
+}
+
+
+- (void)textDidChange:(id)sender
+{
+    NSString *text= self.textField.text;
+    switch (self.type) {
+        case InfoTypeGift: {
+            self.wish.gift = text;
+            break;
+        }
+        case InfoTypePrice: {
+            self.wish.amount = [[NSDecimalNumber alloc] initWithString:text];
+            break;
+        }
+        case InfoTypeStore: {
+            self.wish.store = text;
+            break;
+        }   
+        default:
+            break;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 
