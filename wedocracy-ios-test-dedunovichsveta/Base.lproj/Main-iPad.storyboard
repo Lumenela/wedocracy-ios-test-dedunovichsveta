@@ -47,7 +47,13 @@
                             <constraint firstAttribute="bottom" secondItem="rSD-qB-u5a" secondAttribute="bottom" id="l96-Lt-bgV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="JmF-F4-1I9"/>
+                    <navigationItem key="navigationItem" id="JmF-F4-1I9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="26h-PD-6ad">
+                            <connections>
+                                <action selector="addWish" destination="ZSg-SV-0JK" id="BbU-ei-uQU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="rSD-qB-u5a" id="gHR-MZ-6rZ"/>
                         <segue destination="59R-fL-JmG" kind="push" identifier="NewWish" id="FGX-mE-7pc"/>

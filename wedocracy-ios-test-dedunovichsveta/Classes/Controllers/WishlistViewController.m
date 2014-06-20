@@ -182,7 +182,7 @@ NSString * const WishDetailsSegue = @"WishDetails";
 }
 
 
-- (void)addWish
+- (IBAction)addWish
 {
     [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
     __weak typeof(self) weakSelf = self;
